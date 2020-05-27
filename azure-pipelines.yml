@@ -75,7 +75,7 @@ stages:
       vmImage: 'ubuntu-16.04'
     environment: dev
     variables:
-    - group: Release
+    - group: release
     strategy:
       runOnce:
         deploy:
@@ -98,7 +98,7 @@ stages:
       vmImage: 'ubuntu-16.04'
     environment: test
     variables:
-    - group: 'Release'
+    - group: 'release'
     strategy:
       runOnce:
         deploy:
@@ -117,7 +117,7 @@ stages:
     pool:
       vmImage: 'windows-2019'
     variables:
-    - group: 'Release'
+    - group: 'release'
     steps: 
     - task: UseDotNet@2
       displayName: 'Use .NET Core SDK $(dotnetSdkVersion)'
@@ -146,7 +146,7 @@ stages:
       vmImage: 'ubuntu-16.04'
     environment: staging
     variables:
-    - group: 'Release'
+    - group: 'release'
     strategy:
       runOnce:
         deploy:
